@@ -1,3 +1,18 @@
 # lecture_48_JS_Interface_Events_Drag-n-Drop_with_mouse_events  
 
-#  [Задачи ](https://github.com/schoolteacherMP/lecture_47_JS_Interface_Events_Mouse_movement/blob/main/tasks.md)   
+#  [Задачи ](https://github.com/schoolteacherMP/lecture_48_JS_Interface_Events_Drag-n-Drop_with_mouse_events/blob/main/tasks.md)  
+
+Мы рассмотрели основной алгоритм Drag’n’Drop.  
+
+Ключевые идеи:  
+
+1. Поток событий: `ball.mousedown → document.mousemove → ball.mouseup` (не забудьте отменить браузерный `ondragstart`).  
+2. В начале перетаскивания: запоминаем начальное смещение указателя относительно элемента: `shiftX/shiftY` – и сохраняем его при перетаскивании.  
+3. Выявляем потенциальные цели переноса под указателем с помощью `document.elementFromPoint`.  
+
+На этой основе можно сделать многое.  
+- На mouseup – по-разному завершать перенос: изменять данные, перемещать элементы.  
+- Можно подсвечивать элементы, пока мышь «пролетает» над ними.  
+- Можно ограничить перетаскивание определённой областью или направлением.  
+- Можно использовать делегирование событий для `mousedown/up`. Один обработчик событий на большой зоне, который проверяет `event.target`, может управлять `Drag’n’Drop` для сотен элементов.  
+- И так далее.  
