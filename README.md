@@ -1,5 +1,6 @@
 # lecture_47_JS_Interface_Events_Drag-n-Drop_with_mouse_events  
 
+
 #  [Задачи ](https://github.com/schoolteacherMP/lecture_47_JS_Interface_Events_Drag-n-Drop_with_mouse_events/blob/main/tasks.md)  
 
 Мы рассмотрели основной алгоритм Drag’n’Drop.  
