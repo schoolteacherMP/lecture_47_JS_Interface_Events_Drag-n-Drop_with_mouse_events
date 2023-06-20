@@ -18,23 +18,22 @@
 **1.** В самом начале кода мы определяем переменную block, используя метод `document.querySelector('.block')`. Этот метод ищет первый элемент на странице с классом "block" и присваивает его переменной block  
 Ознакомьтесь с: [querySelector](https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector)  
 
-**2.** Далее мы  [определяем](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let)переменные `startX, startY, offsetX и offsetY`, которые мы будем использовать внутри [функций](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function) `startDrag, drag и stopDrag`.  
+**2.** Далее мы  [определяем](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let) переменные `startX, startY, offsetX и offsetY`, которые мы будем использовать внутри [функций](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function) `startDrag, drag и stopDrag`.  
 
 **3.1** Функция `startDrag` запускается при нажатии на кнопку мыши внутри блока.   `block.addEventListener('mousedown', startDrag);`  
 Ознакомьтесь с: [addEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener)  
 
 Внутри этой функции мы определяем начальное положение курсора мыши, используя свойства [clientX](https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/clientX)  и [clientY](https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/clientY)  объекта event. Мы также определяем начальные координаты блока, используя свойства [offsetLeft](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft)  и [offsetTop](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop) . Мы сохраняем эти значения в соответствующие переменные, чтобы использовать их позже при перемещении блока.  
 
-Ознакомьтесь с: []()  
 Строки `offsetX = block.offsetLeft;` и `offsetY = block.offsetTop;` используются для сохранения начального смещения (отступа) элемента .block относительно его родительского контейнера.  
 
-Свойство `offsetLeft` возвращает горизонтальное смещение элемента относительно его ближайшего родительского элемента, который имеет позиционирование, отличное от static. Оно измеряется в пикселях и может быть положительным или отрицательным в зависимости от положения элемента.  
+Свойство [offsetLeft](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft) возвращает горизонтальное смещение элемента относительно его ближайшего родительского элемента, который имеет позиционирование, отличное от static. Оно измеряется в пикселях и может быть положительным или отрицательным в зависимости от положения элемента.  
 
-Свойство `offsetTop` возвращает вертикальное смещение элемента относительно его ближайшего родительского элемента с позиционированием, отличным от static. Оно также измеряется в пикселях и может быть положительным или отрицательным.  
+Свойство [offsetTop](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop) возвращает вертикальное смещение элемента относительно его ближайшего родительского элемента с позиционированием, отличным от static. Оно также измеряется в пикселях и может быть положительным или отрицательным.  
 
-В данном случае, значения offsetX и offsetY сохраняют начальное смещение элемента .block относительно его родительского контейнера в момент начала перетаскивания (когда событие mousedown происходит на элементе .block). Это смещение используется позже в функции drag для определения новой позиции элемента на основе текущего положения указателя мыши и начального смещения.  
+В данном случае, значения `offsetX` и `offsetY` сохраняют начальное смещение элемента .block относительно его родительского контейнера в момент начала перетаскивания (когда событие mousedown происходит на элементе .block). Это смещение используется позже в функции drag для определения новой позиции элемента на основе текущего положения указателя мыши и начального смещения.  
 
-**3.2** После того, как мы определили начальные значения, мы добавляем обработчики событий mousemove и mouseup к объекту document. Эти обработчики событий будут вызываться при перемещении мыши и отпускании кнопки мыши соответственно.  
+**3.2** После того, как мы определили начальные значения, мы добавляем обработчики событий [mousemove](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event)   и  [mouseup](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event)   к объекту document. Эти обработчики событий будут вызываться при перемещении мыши и отпускании кнопки мыши соответственно.  
 пример использования:  
 `document.addEventListener('mousemove', drag);`    
 `document.addEventListener('mouseup', stopDrag);`  
@@ -43,7 +42,7 @@
 Внутри этой функции мы определяем текущее положение курсора мыши и вычисляем новые координаты для блока. Мы используем начальные координаты блока, чтобы вычислить разницу между начальным положением блока и текущим положением курсора мыши, и добавляем эту разницу к начальным координатам блока.   
 Пример использования: `const x = offsetX + event.clientX - startX;`  
 
-**4.2** Затем мы устанавливаем новые координаты блока, используя свойства style.left и style.top.   
+**4.2** Затем мы устанавливаем новые координаты блока, используя свойства [style](https://www.w3schools.com/jsref/prop_html_style.asp).left и [style](https://www.w3schools.com/jsref/prop_html_style.asp).top.   
 Пример использования:  `block.style.left = x + 'px';`  
 
 **5.** Функция` stopDrag` запускается при отпускании кнопки мыши. Внутри этой функции мы удаляем обработчики событий mousemove и mouseup из объекта document, чтобы прекратить перемещение блока.
