@@ -18,13 +18,11 @@
 **1.** В самом начале кода мы определяем переменную block, используя метод `document.querySelector('.block')`. Этот метод ищет первый элемент на странице с классом "block" и присваивает его переменной block  
 Ознакомьтесь с: [querySelector](https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector)  
 
-**2.** Далее мы определяем переменные `startX, startY, offsetX и offsetY`, которые мы будем использовать внутри функций `startDrag, drag и stopDrag`.  
-Ознакомьтесь с: [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let)  
-Ознакомьтесь с: [Function](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function)  
-
+**2.** Далее мы  [определяем](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let)переменные `startX, startY, offsetX и offsetY`, которые мы будем использовать внутри [функций](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function) `startDrag, drag и stopDrag`.  
 
 **3.1** Функция `startDrag` запускается при нажатии на кнопку мыши внутри блока.   `block.addEventListener('mousedown', startDrag);`  
 Ознакомьтесь с: [addEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener)  
+
 Внутри этой функции мы определяем начальное положение курсора мыши, используя свойства [clientX](https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/clientX)  и [clientY](https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/clientY)  объекта event. Мы также определяем начальные координаты блока, используя свойства [offsetLeft](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft)  и [offsetTop](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop) . Мы сохраняем эти значения в соответствующие переменные, чтобы использовать их позже при перемещении блока.  
 
 Ознакомьтесь с: []()  
