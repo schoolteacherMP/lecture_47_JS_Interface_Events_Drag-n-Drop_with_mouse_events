@@ -49,7 +49,7 @@
    
 Метод [removeEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener) используется для удаления обработчика события, который ранее был добавлен с помощью метода [addEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener). Он позволяет отключить обработку определенного типа события на указанном элементе.  
 
-[removeEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener)` используется в функции stopDrag, чтобы отключить слушатели событий mousemove и mouseup. После вызова [removeEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener), обработчики drag и stopDrag больше не будут вызываться при соответствующих событиях.  
+`removeEventListener` используется в функции `stopDrag`, чтобы отключить слушатели событий `mousemove` и `mouseup`. После вызова `removeEventListener`, обработчики `drag` и `stopDrag` больше не будут вызываться при соответствующих событиях.  
 
 При удалении слушателей событий с помощью [removeEventListener](https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener), важно указать те же параметры (тип события и функцию обработчика), которые были использованы при добавлении слушателя с помощью addEventListener. Это позволяет точно идентифицировать слушатель, который должен быть удален.  
 Пример использования: `document.removeEventListener('mousemove', drag);`  
